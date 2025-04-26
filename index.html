@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: pink;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 1em 2em;
+      font-size: 1.2em;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      background: red;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="question">Will you be my Valentine?</h1>
+  <div class="buttons">
+    <button id="yes" onclick="yes()">Yes</button>
+    <button id="no" onclick="no()">No</button>
+  </div>
+
+  <script>
+    function yes() {
+      document.getElementById('question').innerText = "I love youuuu!";
+      document.querySelector('.buttons').style.display = 'none';
+    }
+
+    function no() {
+      // Make the Yes button grow bigger every time No is clicked
+      let yesButton = document.getElementById('yes');
+      let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+      yesButton.style.fontSize = (currentSize * 1.5) + "px";
+    }
+  </script>
+</body>
+</html>
